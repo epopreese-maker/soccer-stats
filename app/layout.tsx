@@ -8,7 +8,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://soccer-stats-five.v
 const adsensePubId = 'ca-pub-8020256593365450'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl)
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'FootballStats – Live Soccer Standings, Scores & Stats',
     template: '%s | FootballStats',
