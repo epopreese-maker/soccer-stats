@@ -54,7 +54,7 @@ export interface StandingsTable {
 
 export interface Scorer {
   player: { id: number; name: string; nationality: string; section: string }
-  team: { id: number; name: string; crest: string }
+  team: { id: number; name: string; shortName?: string; crest: string }
   goals: number
   assists: number | null
   penalties: number | null
