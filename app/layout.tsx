@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import Script from 'next/script'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://soccer-stats-five.vercel.app'
-const adsensePubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID
+const adsensePubId = 'ca-pub-8020256593365450'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
