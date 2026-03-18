@@ -18,30 +18,8 @@ interface Props {
   params: { leagueCode: string; teamId: string; opponentId: string }
 }
 
-export async function generateStaticParams() {
-  const leagues = ['PL', 'PD', 'BL1', 'SA', 'FL1']
-  const params: { leagueCode: string; teamId: string; opponentId: string }[] = []
-
-  for (const code of leagues) {
-    try {
-      const { teams } = await getLeagueTeams(code)
-      for (const teamA of teams) {
-        for (const teamB of teams) {
-          if (teamA.id !== teamB.id) {
-            params.push({
-              leagueCode: code,
-              teamId: String(teamA.id),
-              opponentId: String(teamB.id),
-            })
-          }
-        }
-      }
-    } catch {
-      // skip
-    }
-  }
-  return params
-}
+// No generateStaticParams — pages render on-demand with ISR to avoid build-time rate limiting
+export const dynamicParams = true
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { leagueCode, teamId, opponentId } = params
