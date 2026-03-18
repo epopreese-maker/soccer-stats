@@ -129,9 +129,9 @@ export async function getStandings(leagueCode: string) {
   return data
 }
 
-export async function getScorers(leagueCode: string) {
+export async function getScorers(leagueCode: string, limit = 20) {
   const data = await apiFetch<{ scorers: Scorer[]; competition: Competition; season: { startDate: string; endDate: string } }>(
-    `/competitions/${leagueCode}/scorers`
+    `/competitions/${leagueCode}/scorers?limit=${limit}`
   )
   return data
 }
