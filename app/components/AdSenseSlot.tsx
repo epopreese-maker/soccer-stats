@@ -1,9 +1,7 @@
-'use client'
-
 /**
- * AdSense placeholder component.
- * Once approved, replace the placeholder div with the real AdSense <ins> tag.
- * Set NEXT_PUBLIC_ADSENSE_PUB_ID in your Vercel env vars after approval.
+ * AdSense placeholder component — no 'use client' needed (no hooks/state).
+ * Once AdSense is approved, replace the placeholder with the real <ins> tag.
+ * Set NEXT_PUBLIC_ADSENSE_PUB_ID in Vercel env vars after approval.
  */
 
 interface AdSenseSlotProps {
@@ -28,10 +26,9 @@ export default function AdSenseSlot({
 }: AdSenseSlotProps) {
   const pubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID
 
-  // When AdSense is approved, render the real unit
   if (pubId && slot) {
     return (
-      <div className={`ad-container my-4 ${className}`}>
+      <div className={`my-4 ${className}`}>
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
@@ -50,7 +47,7 @@ export default function AdSenseSlot({
       className={`ad-slot my-4 ${FORMAT_CLASSES[format] ?? 'min-h-[90px]'} ${className}`}
       aria-label={label}
     >
-      <span>📢 {label} — AdSense placeholder</span>
+      <span className="text-gray-400 text-xs">{label}</span>
     </div>
   )
 }
