@@ -109,7 +109,7 @@ export const LEAGUES: Record<string, { name: string; country: string; flag: stri
 async function apiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
     headers: { 'X-Auth-Token': API_KEY },
-    next: { revalidate: 3600 }, // ISR: revalidate every hour
+    next: { revalidate: 43200 }, // ISR: revalidate every 12 hours
   })
 
   if (!res.ok) {
