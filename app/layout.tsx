@@ -4,7 +4,7 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Script from 'next/script'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://footballstats.vercel.app'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://soccer-stats-five.vercel.app'
 const adsensePubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID
 
 export const metadata: Metadata = {
@@ -45,9 +45,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google AdSense — loads only when pub ID is set */}
         {adsensePubId && (
           <Script
             async
@@ -57,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         )}
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <Navigation />
         <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
           {children}
