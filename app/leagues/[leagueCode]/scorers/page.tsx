@@ -10,7 +10,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(LEAGUES).map((code) => ({ leagueCode: code }))
+  return ['PL', 'PD', 'BL1', 'SA', 'FL1', 'CL'].map((code) => ({ leagueCode: code }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
