@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { LEAGUES, getLeagueTeams } from '@/lib/api'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://footballstats.vercel.app'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://soccer-stats-five.vercel.app'
 
 export const revalidate = 86400 // regenerate sitemap daily
 
