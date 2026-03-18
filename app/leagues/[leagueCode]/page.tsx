@@ -9,9 +9,8 @@ interface Props {
   params: { leagueCode: string }
 }
 
-export async function generateStaticParams() {
-  return ['PL', 'PD', 'BL1', 'SA', 'FL1', 'CL'].map((code) => ({ leagueCode: code }))
-}
+// Pages render on-demand - avoids exhausting free-tier API quota at build time
+export const dynamicParams = true
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { leagueCode } = params
