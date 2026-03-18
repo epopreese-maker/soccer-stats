@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .table-hover tbody tr:hover {
+    @apply bg-blue-50 transition-colors duration-100;
+  }
+
+  .badge-win {
+    @apply inline-block w-5 h-5 rounded-full bg-green-500 text-white text-xs font-bold leading-5 text-center;
+  }
+  .badge-draw {
+    @apply inline-block w-5 h-5 rounded-full bg-yellow-400 text-white text-xs font-bold leading-5 text-center;
+  }
+  .badge-loss {
+    @apply inline-block w-5 h-5 rounded-full bg-red-500 text-white text-xs font-bold leading-5 text-center;
+  }
+
+  .ad-slot {
+    @apply w-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm font-medium;
+  }
+}
